@@ -22,3 +22,4 @@
 | 6 | Ekstrak File | Mengekstrak file terkompres dengan perintah ***gunzip*** |
 | 7 | Kompres Folder | Mengompres folder dengan perintah ***tar -czf*** |
 | 8 | Ekstrak Folder | Mengekstrak folder dengan perintah ***tar -xf*** |
+| 9 | Kalkulator | Melakukan perhitungan sederhana seperti tambah kurang kali bagi ***bc*** |
