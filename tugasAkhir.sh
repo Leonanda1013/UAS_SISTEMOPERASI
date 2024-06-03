@@ -12,6 +12,7 @@ show_menu(){
     echo "8. Ekstrak File"
     echo "9. Kompres Folder"
     echo "10. Ekstrak Folder"
+    echo "11. Kalkulator"
 }
 
 create_file(){
@@ -71,6 +72,23 @@ extract_folder(){
     echo "Folder $folder berhasil diekstrak"
 }
 
+calculator(){
+    echo "Kalkulator Sederhana"
+    read -p "Masukkan angka pertama: " num1
+    read -p "Masukkan operasi (+, -, *, /): " op
+    read -p "Masukkan angka kedua: " num2
+    
+    case $op in
+        +) result=$(echo "$num1 + $num2" | bc) ;;
+        -) result=$(echo "$num1 - $num2" | bc) ;;
+        \*) result=$(echo "$num1 * $num2" | bc) ;;
+        /) result=$(echo "scale=2; $num1 / $num2" | bc) ;;
+        *) echo "Operasi tidak valid." ;;
+    esac
+    
+    echo "Hasil: $result"
+}
+
 while true; do
     show_menu
     read -p "Masukkan pilihan: " choice
@@ -106,6 +124,9 @@ while true; do
             ;;
         10)
             extract_folder
+            ;;
+        11)
+            calculator
             ;;
         *)
             echo "Pilihan tidak valid."
